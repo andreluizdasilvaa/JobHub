@@ -1,0 +1,30 @@
+:root {
+    --font-mermaid: 'Mermaid', sans-serif;
+    --font-greenmkt: 'GreenMarket', sans-serif;
+    --font-cubic: 'Cubic', sans-serif;
+    --font-impact: 'impact', sans-serif;
+}
+
+/* mermaid */
+@font-face {
+    font-family: mermaid;
+    src: url(../../assets/fonts/Mermaid.ttf);
+}
+
+/* Green Market */
+@font-face {
+    font-family: greenmkt;
+    src: url(../../assets/fonts/GreenMarket.otf);
+}
+
+/* Cubic */
+@font-face {
+    font-family: cubic;
+    src: url(../../assets/fonts/cubic.ttf);
+}
+
+/* Impact */
+@font-face {
+    font-family: impact;
+    src: url(../../assets/fonts/Impact.ttf);
+}

@@ -1,0 +1,10 @@
+@import url(../utilities/global.css);
+.btn_padrao {
+    background-color: var(--secundary-blue);
+    padding: 16px;
+    border-radius: 12px;
+    z-index: 9999;
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-greenmkt);
+}
