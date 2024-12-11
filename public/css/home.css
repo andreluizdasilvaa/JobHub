@@ -1,6 +1,18 @@
 @import url(utilities/global.css);
 @import url(components/header.css);
 
+h4 {
+    color: var(--primary-blue);
+    font-size: var(--h5);
+    font-family: var(--font-greenmkt);
+    font-weight: bold;
+}
+
+p {
+    color: var(--black);
+    font-size: var(--h7);
+}
+
 
 .conteiner_sec_main {
     background-image: url(../assets/imgs/index/background_blue.png);
@@ -42,8 +54,32 @@
     font-size: var(--h6);
     z-index: 1;
 }
+/* sec1 */
 
-section {
-    height: 100px;
-    background-color: red;
+.sec_1-list {
+    margin: 75px 0px;
+}
+
+.sec_1-list ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 34px;
+    width: 100%;
+}
+
+.sec_1-list ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 34px;
+
+    max-width: 500px;
+}
+
+.sec_1-list ul li h4,
+.sec_1-list ul li p {
+    text-align: center;
 }
