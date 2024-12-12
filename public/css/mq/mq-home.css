@@ -1,0 +1,38 @@
+@import url(../utilities/variaveis.css);
+
+@media screen and (max-width: 1130px) {
+    .sec2_ilustration img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    .sec_main_text h1 {
+        font-size: var(--h2);
+    }
+
+    /* sec5 */
+    .sec_5 h2 {
+        font-size: var(--h3);
+    }
+
+    .sec_5 h3 {
+        font-size: var(--h8);
+    }
+
+    /* footer */
+    footer h5 {
+        font-size: var(--h6);
+    }
+    
+    footer p span a {
+        font-size: var(--h8);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .sec_main_text h1 {
+        font-size: var(--h4);
+    }
+}

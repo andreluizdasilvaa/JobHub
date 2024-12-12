@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../css/utilities/global.css" />
         <link rel="shortcut icon" href="../assets/imgs/Logo.svg" type="image/x-icon" />
-        <!-- header -->
+        <!-- Style -->
         <link rel="stylesheet" href="../css/home.css" />
+        <link rel="stylesheet" href="../css/mq/mq-home.css">
         <!-- script -->
         <script src="../js/home/menu_hamburguer.js"></script>
+        <script src="../js/home/animations.js"></script>
         <title>JobHub</title>
     </head>
     <body>
@@ -84,7 +86,7 @@
             <div class="conteiner_sec_main">
                 <div class="sec_main_text">
                     <h1>
-                        Encontre o trabalho remoto<br />
+                        Encontre o trabalho <span>remoto</span><br />
                         dos seus <span>sonhos</span> ou crie a vaga perfeita!
                     </h1>
                     <a class="btn_padrao" id="cta_btn" href=""> ENCONTRAR VAGA </a>
@@ -118,6 +120,175 @@
                     </li>
                 </ul>
             </section>
+
+            <!-- sec2 -->
+            <section class="sec_2">
+
+                <div class="sec2_list-text">
+                    <ul>
+                        <li>
+                            <img src="../assets/imgs/index/ilustration_sec2-1.png" alt="Ilustration">
+                            <p>Encontre os melhores profissionais para a sua 
+                                empresa com facilidade!</p>
+                        </li>
+                        <li>
+                            <img src="../assets/imgs/index/ilustration_sec2-2.png" alt="Ilustration">
+                            <p>Conectando empresas e profissionais com 
+                                facilidade e agilidade.</p>
+                        </li>
+                        <li>
+                            <img src="../assets/imgs/index/ilustration_sec2-3.png" alt="Ilustration">
+                            <p>Atraia os melhores candidatos e economize 
+                                tempo no processo seletivo.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sec2_ilustration">
+                    <img src="../assets/imgs/index/ilustration_sec2-4.png" alt="">
+                </div>
+
+            </section>
+
+            <!-- sec3 -->
+            <section class="sec_3">
+
+                <ul>
+                    <!-- item -->
+                    <li>
+                        <!-- header/main -->
+                        <div class="sec3_list">
+
+                            <div class="sec3_list-header">
+                                <img src="../assets/imgs/index/sec3_profile_picture-1.png" alt="profile_picture">
+                                <p>João Silva</p>
+                            </div>
+
+                            <div class="sec3_list-main">
+                                <p>"Eu encontrei meu emprego dos sonhos 
+                                em apenas uma semana!"</p>
+                            </div>
+
+                        </div>
+
+                        <!-- footer -->
+                        <div class="sec3_list-footer">
+                            <!-- assessment - container -->
+                             <div>
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                             </div>
+                            <p>Desenvolvedor Full-Stack</p>
+                        </div>
+                    </li>
+
+                    <!-- item 2 -->
+                    <li>
+                        <!-- header/main -->
+                        <div class="sec3_list">
+
+                            <div class="sec3_list-header">
+                                <img src="../assets/imgs/index/sec3_profile_picture-2.png" alt="profile_picture">
+                                <p>Ana Souza</p>
+                            </div>
+
+                            <div class="sec3_list-main">
+                                <p>"A plataforma foi simples de usar e 
+                                    encontrei candidatos ideais em 
+                                    pouco tempo."</p>
+                            </div>
+
+                        </div>
+
+                        <!-- footer -->
+                        <div class="sec3_list-footer">
+                            <!-- assessment - container -->
+                             <div>
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                             </div>
+                            <p>RH da Tech Corp</p>
+                        </div>
+                    </li>
+
+                    <!-- item 3 -->
+                    <li>
+                        <!-- header/main -->
+                        <div class="sec3_list">
+
+                            <div class="sec3_list-header">
+                                <img src="../assets/imgs/index/sec3_profile_picture-3.png" alt="profile_picture">
+                                <p>Carla Mendes</p>
+                            </div>
+
+                            <div class="sec3_list-main">
+                                <p>"O processo de busca de emprego 
+                                    nunca foi tão fácil! A plataforma 
+                                    me conectou com várias 
+                                    oportunidades em pouco tempo."  </p>
+                            </div>
+
+                        </div>
+
+                        <!-- footer -->
+                        <div class="sec3_list-footer">
+                            <!-- assessment - container -->
+                             <div>
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                                <img src="../assets/imgs/index/star.svg" alt="star-assessment">
+                             </div>
+                            <p>Designer Gráfica</p>
+                        </div>
+                    </li>
+
+            </section>
+
+             <!-- sec4 -->
+            <section class="sec_4">
+                    <ul>
+                        <li> 
+                            <h5>NUMERO DE VAGAS DISPONIVEIS</h5> 
+                            <h2><span class="count" data-target="3250">0</span>K</h2>
+                        </li> 
+
+                        <li> 
+                            <h5>PROFISSIONAIS CADASTRADOS</h5> 
+                            <h2><span class="count" data-target="4621">0</span>K</h2>
+                        </li> 
+
+                        <li> 
+                            <h5>EMPRESAS CADASTRADAS</h5> 
+                            <h2><span class="count" data-target="1214">0</span>K</h2>
+                        </li>
+                        
+                        <li> 
+                            <h5>TEMPO MEDIO DE CONTRATAÇÃO</h5> 
+                            <h2><span class="count" data-target="7">0</span>DIAS</h2> 
+                        </li> 
+                    </ul>
+            </section>
+
+              <!-- sec5 -->
+            <section class="sec_5">
+                <h2>Está Pronto para <span>Transformar</span> sua Carreira?</h2>
+                <h3>ENTÃO CADASTRE-SE CLICANDO NO BOTÃO ABAIXO</h3>
+
+                <a class="btn_padrao" href="">CADASTRAR</a>
+            </section>
         </main>
+
+        <footer>
+            <h5>&copy; 2024 JobHub. Todos os Direitos Reservados</h5>
+            <p>Para mais informações consulte nossas <span><a href="">Politica de privacidade e Termos de Uso</a></span> </p>
+        </footer>
     </body>
 </html>
