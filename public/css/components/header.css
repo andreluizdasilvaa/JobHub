@@ -1,13 +1,31 @@
 @import url(../utilities/global.css);
 @import url(btn_padrao.css);
 
+/* Estado inicial com posição fixa */
 .btn_header {
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: fit-content;
+    z-index: 1;
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Transições suaves */
+    opacity: 1;
+    transform: translateY(0); /* Sem deslocamento */
 }
+
+/* Quando a rolagem ultrapassa o limite */
+.btn_header.scrolled {
+    opacity: 0; /* Gradualmente desaparece */
+    transform: translateY(-50px); /* Move-se suavemente para cima */
+    pointer-events: none; /* Impede interações */
+}
+
+/* Conteúdo interno permanece intacto */
+.btn_header_content {
+    transition: background-color 0.3s ease; /* Caso queira mudar o fundo suavemente */
+}
+
 
 .btn_header_content {
     display: flex;
@@ -21,7 +39,7 @@
     margin: 18px 24px;
 
     width: 100%;
-    max-width: 1000px;
+    max-width: 50vw;
     
     backdrop-filter: blur(8px); 
     -webkit-backdrop-filter: blur(8px);
@@ -115,9 +133,15 @@
     color: var(--white);
 }
 
+/* Media queryes */
+@media screen and (max-width: 1400px ) {
+    .btn_header_content {
+        max-width: 90vw;
+    }
+}
+
 
 @media screen and (max-width: 800px ) {
-
     #btns_hdr,
     .btn_header_content div ul {
         display: none;

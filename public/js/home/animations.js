@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (count < target) {
                     counter.innerText = Math.ceil(count + increment);
-                    setTimeout(updateCount, 10);
+                    setTimeout(updateCount, 15);
                 } else {
                     counter.innerText = target;
                 }
@@ -33,4 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
             animateCounters();
         }
     });
-})
+
+    //Sumir o header após tanto de rolagem
+    const header = document.querySelector('.btn_header');
+
+    // Adiciona o evento de rolagem
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.scrollY;
+        const viewportHeight = window.innerHeight;
+
+        // Adiciona ou remove a classe 'scrolled' com base na posição do scroll
+        if (scrollPosition > 0.8 * viewportHeight) { 
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+});
