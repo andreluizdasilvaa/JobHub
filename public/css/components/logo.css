@@ -1,0 +1,8 @@
+@import url(../utilities/fonts.css);
+@import url(../utilities/variaveis.css);
+
+.logo01 {
+    font-family: var(--font-cubic);
+    font-size: var(--h4);
+    color: var(--white2);
+}

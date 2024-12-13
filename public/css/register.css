@@ -1,0 +1,11 @@
+@import url(utilities/global.css);
+@import url(../css/components/logo.css);
+
+:root {
+    --white2: #000;
+    --black2: #fff;
+}
+
+header h1 {
+    margin: 2vw;
+}

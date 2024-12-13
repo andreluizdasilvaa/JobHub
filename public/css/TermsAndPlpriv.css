@@ -1,0 +1,52 @@
+@import url(utilities/global.css);
+@import url(components/header.css);
+
+:root {
+    --white2: #000;
+    --black2: #fff;
+}
+
+section ol,
+section ul {
+    list-style: inside;
+}
+
+section {
+    max-width: 70vw;
+    margin: auto;
+    margin-top: 200px;
+    color: rgba(0, 0, 0, 0.478);
+}
+
+section h1 {
+    color: black;
+    font-size: var(--h3);
+    text-align: center;
+    font-family: var(--font-greenmkt);
+    font-weight: bold;
+    margin: 24px;
+}
+
+section h2 {
+    color: black;
+    font-size: var(--h6);
+    font-family: var(--font-greenmkt);
+    text-decoration: underline;
+    font-weight: bold;
+    margin: 24px 0px;
+}
+
+section ol {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+section strong {
+    color: black;
+}
+
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
