@@ -1,6 +1,7 @@
 :root {
+    --color-red: #FF0000;
     /* Azul */
-    --primary-blue: #14248A;
+    --primary-blue: #14248a;
     --secundary-blue: #1B98E0;
     /* Verde */
     --green-pastel: #ACF7C1;

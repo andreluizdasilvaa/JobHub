@@ -6,3 +6,9 @@
     font-size: var(--h4);
     color: var(--white2);
 }
+
+.link_logo01 {
+    display: flex;
+    width: fit-content;
+    text-decoration: none !important;
+}

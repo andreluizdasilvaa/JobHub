@@ -1,24 +1,239 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/imgs/Logo.svg" type="image/x-icon">
+    <!-- js -->
+    <script src="../js/Formatacao_inputs/inp_gera_erros.js"></script>
+    <script src="../js/login_register/register.js"></script>
+    <script src="../js/Formatacao_inputs/inp_estado_city.js"></script>
+    <script src="../js/Formatacao_inputs/inp_tell.js"></script>
+    <script src="../js/Formatacao_inputs/inp_cnpj.js"></script>
+    <script src="../js/Formatacao_inputs/inp_cpf.js"></script>
     <!-- Style -->
-     <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/register.css">
     <title>Cadastro</title>
 </head>
+
 <body>
-    
     <header>
-        <h1 class="logo01">jobhun</h1>
+        <a href="/" class="link_logo01">
+            <h2 class="logo01">JobHub</h2>
+        </a>
     </header>
 
+    <!-- Cadastro -->
     <main>
-        <!-- Cadastro -->
-         <section>
-            
-         </section>
+        <div class="model-form-padrao">
+            <div class="container-model-form-padrao">
+                <header>
+                    <h1>Cadastro</h1>
+                    <div class="select_pfpj">
+                        <div class="radio-buttons-container">
+                            <div class="radio-button">
+                                <input name="radio-group" id="radio2" class="radio-button__input" type="radio" checked>
+                                <label for="radio2" class="radio-button__label">
+                                    <span class="radio-button__custom"></span>
+                                    Pessoa Física
+                                </label>
+                            </div>
+                            <div class="radio-button">
+                                <input name="radio-group" id="radio3" class="radio-button__input" type="radio">
+                                <label for="radio3" class="radio-button__label">
+                                    <span class="radio-button__custom"></span>
+                                    Pessoa Jurídica
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+    
+                <!-- Form - PF-->
+                <section id="form-pf">
+                    <div class="container-form">
+                        <form action="">
+                            <!-- Nome -->
+                            <div class="input_default">
+                                <label for="nome-pf">Nome Completo: <span>*</span></label>
+                                <input type="text" id="nome-pf" placeholder="Seu nome completo" required maxlength="120">
+                            </div>
+    
+                            <!-- Apelido -->
+                            <div class="input_default">
+                                <label for="apelido-pf">Apelido: <span>*</span></label>
+                                <input type="text" id="apelido-pf" placeholder="Seu apelido único" required maxlength="30">
+                            </div>
+    
+                            <!-- CPF -->
+                            <div class="input_default">
+                                <label for="cpf-pf">CPF: <span>*</span></label>
+                                <input type="text" id="cpf" placeholder="Digite seu CPF" maxlength="14" required>
+                            </div>
+    
+                            <!-- Data de Nascimento -->
+                            <div class="input_default">
+                                <label for="data_nasc-pf">Data de Nascimento: <span>*</span></label>
+                                <input type="date" id="data_nasc-pf" placeholder="dd/mm/aaaa" required>
+                            </div>
+
+                            <!-- Telefone -->
+                            <div class="input_default">
+                                <label for="tell-pf">Telefone:</label>
+                                <input type="tel" class="tellephone_input" id="tell-pf" placeholder="(XX) XXXXX-XXXX" maxlength="15" onkeyup="handlePhone(event)">
+                            </div>
+
+                            <!-- E-mail -->
+                            <div class="input_default">
+                                <label for="email_pf">E-mail: <span>*</span></label>
+                                <input type="email" id="email_pf" placeholder="Seu e-mail" required maxlength="50">
+                            </div>
+
+                            <!-- Localização -->
+                            <div class="input_default">
+                                <label for="estado-pf">Estado (UF):</label>
+                                <select id="estado-pf" name="estado">
+                                    <option value="" disabled selected>Selecione seu estado</option>
+                                    <!-- Os estados serão carregadas dinamicamente via JavaScript -->
+                                </select>
+                            </div>
+
+                            <!-- senha -->
+                            <div class="input_default">
+                                <label for="senha-pf">Senha: <span>*</span></label>
+                                <input type="password" id="senha-pf" placeholder="Digite sua senha" required maxlength="150">
+                            </div>
+
+                            <!-- Cidade -->
+                            <div class="input_default">
+                                <label for="cidade-pf">Cidade:</label>
+                                <select id="cidade-pf" name="cidade">
+                                    <option value="" disabled selected>Selecione sua cidade</option>
+                                    <!-- As cidades serão carregadas dinamicamente via JavaScript -->
+                                </select>
+                            </div>
+
+                             <!-- Aceita termos de uso + submit -->
+                             <div class="container_submit">
+                                <div class="container_terms">
+                                    <label class="container_btn">
+                                        <input type="checkbox" id="checkbox-terms-pf" required>
+                                        <div id="checkmark-pf" class="checkmark"></div>
+                                    </label>
+                                    <p>Ao marcar a caixa de seleção, você concorda com a Política de Privacidade e os Termos de Uso <a href="/terms-of-use-and-privacy-policies" target="_blank">Saiba mais</a></p>
+                                </div>
+                                <button id="submit_register-pf" class="btn_padrao">Cadastrar</button>
+                             </div>
+
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Form - PJ -->
+                <section id="form-pj">
+                    <div class="container-form">
+                        <form action="">
+                            <!-- Nome da empresa -->
+                            <div class="input_default">
+                                <label for="nome-pj">Nome da empresa: <span>*</span></label>
+                                <input type="text" id="nome-pj" placeholder="Nome oficial da sua empresa" required maxlength="120">
+                            </div>
+
+                            <!-- Apelido -->
+                            <div class="input_default">
+                                <label for="apelido-pj">Apelido: <span>*</span></label>
+                                <input type="text" id="apelido-pj" placeholder="Seu apelido único" required maxlength="30">
+                            </div>
+
+                            <!-- cnpj -->
+                            <div class="input_default">
+                                <label for="cnpj-pj">CNPJ: <span>*</span></label>
+                                <input type="text" id="cnpj" placeholder="Numero de registro da sua empresa" required>
+                            </div>
+                            
+                            <!-- Endereço -->
+                            <div class="input_default">
+                                <label for="endereco-pj">Endereço:</label>
+                                <input type="text" id="endereco-pj" placeholder="Localização da sede" maxlength="191">
+                            </div>
+
+                            <div class="input_default">
+                                <label for="area-atuacao-pj">Área de Atuação: <span>*</span></label>
+                                <select id="area-atuacao-pj" name="area-atuacao" required>
+                                    <option value="" disabled selected>Selecione a área de atuação</option>
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="saude">Saúde</option>
+                                    <option value="educacao">Educação</option>
+                                    <option value="financas">Finanças</option>
+                                    <option value="energia">Energia</option>
+                                    <option value="comercio">Comércio</option>
+                                    <option value="servicos">Serviços</option>
+                                    <option value="industria">Indústria</option>
+                                    <option value="agricultura">Agricultura</option>
+                                    <option value="construção">Construção Civil</option>
+                                    <option value="turismo">Turismo</option>
+                                    <option value="logistica">Logística</option>
+                                    <option value="meio-ambiente">Meio Ambiente</option>
+                                    <option value="arte-cultura">Arte e Cultura</option>
+                                    <option value="esportes">Esportes</option>
+                                    <option value="alimentacao">Alimentação</option>
+                                    <option value="transportes">Transportes</option>
+                                    <option value="comunicacao">Comunicação</option>
+                                    <option value="recursos-humanos">Recursos Humanos</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+
+                            <!-- Localização -->
+                            <div class="input_default">
+                                <label for="estado-pj">Estado (UF):</label>
+                                <select id="estado-pj" name="estado">
+                                    <option value="" disabled selected>Selecione seu estado</option>
+                                    <!-- Os estados serão carregadas dinamicamente via JavaScript -->
+                                </select>
+                            </div>
+
+                            <!-- senha -->
+                            <div class="input_default">
+                                <label for="senha-pj">Senha: <span>*</span></label>
+                                <input type="password" id="senha-pj" placeholder="Digite sua senha" required maxlength="150">
+                            </div>
+
+                            <!-- Cidade -->
+                            <div class="input_default">
+                                <label for="cidade-pj">Cidade:</label>
+                                <select id="cidade-pj" name="cidade">
+                                    <option value="" disabled selected>Selecione sua cidade</option>
+                                    <!-- As cidades serão carregadas dinamicamente via JavaScript -->
+                                </select>
+                            </div>
+
+                            <!-- E-mail -->
+                            <div class="input_default">
+                                <label for="email_pj">E-mail: <span>*</span></label>
+                                <input type="email" id="email_pj" placeholder="Seu e-mail" required maxlength="150">
+                            </div>
+
+                            <!-- Aceita termos de uso + submit -->
+                             <div class="container_submit">
+                                <div class="container_terms">
+                                    <label class="container_btn">
+                                        <input type="checkbox" id="checkbox-terms-pj" required>
+                                        <div id="checkmark-pj" class="checkmark"></div>
+                                    </label>
+                                    <p>Ao marcar a caixa de seleção, você concorda com a Política de Privacidade e os Termos de Uso <a href="/terms-of-use-and-privacy-policies" target="_blank">Saiba mais</a></p>
+                                </div>
+                                <button id="submit_register-pj" class="btn_padrao">Cadastrar</button>
+                             </div>
+
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
     </main>
 
 </body>
+
 </html>

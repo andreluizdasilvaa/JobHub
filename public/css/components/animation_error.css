@@ -1,0 +1,14 @@
+/* Estilo para o input com erro */
+
+.input_error {
+    animation: shake .3s ease; /* Animação de shake */
+}
+
+/* Animação de "shake" para o efeito de erro */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
+}
