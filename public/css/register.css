@@ -3,6 +3,7 @@
 @import url(../css/components/model-form_padrao.css);
 @import url(../css/components/input_default.css);
 @import url(../css/components/btn_padrao.css);
+@import url(../css/components/modal_alert.css);
 
 body {
   background-color: var(--white);

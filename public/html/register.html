@@ -12,6 +12,8 @@
     <script src="../js/Formatacao_inputs/inp_tell.js"></script>
     <script src="../js/Formatacao_inputs/inp_cnpj.js"></script>
     <script src="../js/Formatacao_inputs/inp_cpf.js"></script>
+    <script src="../js/Formatacao_inputs/inp_clear.js"></script>
+    <script src="../js/utilities/modal_alert.js" defer></script>
     <!-- Style -->
     <link rel="stylesheet" href="../css/register.css">
     <title>Cadastro</title>
@@ -81,7 +83,7 @@
                             <!-- Telefone -->
                             <div class="input_default">
                                 <label for="tell-pf">Telefone:</label>
-                                <input type="tel" class="tellephone_input" id="tell-pf" placeholder="(XX) XXXXX-XXXX" maxlength="15" onkeyup="handlePhone(event)">
+                                <input type="tel" class="tellephone_input" id="tell-pf" placeholder="+55 (XX) XXXXX-XXXX" maxlength="15" onkeyup="handlePhone(event)">
                             </div>
 
                             <!-- E-mail -->
@@ -233,6 +235,20 @@
             </div>
         </div>
     </main>
+
+    <div class="modal_alert" id="modal_alert">
+        <div class="container_modal_alert">
+            <div class="content_modal_alert">
+                <img id="image_modal_alert" src="../assets/imgs/modal_alert/check.svg" alt="check">
+                <p id="text_modal_alert">Cadastro Realizado com Sucesso!</p>
+            </div>
+            <div>
+                <button id="btn_modal_alert" class="btn_padrao">Continuar</button>
+            </div>
+        </div>
+    </div>
+    <div class="overlay_blackground" id="overlay_blackground"></div>
+    
 
 </body>
 

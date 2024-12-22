@@ -12,3 +12,31 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model userPf {
+  id          Int       @id @default(autoincrement())
+  nome        String
+  apelido     String    @unique
+  cpf         String    @unique
+  nascimento  DateTime
+  telefone    String?
+  email       String    @unique
+  estado      String?
+  cidade      String?
+  senha       String
+  createdAt   DateTime  @default(now())
+}
+
+model userPJ {
+  id           Int      @id @default(autoincrement())
+  nome         String
+  apelido      String   @unique
+  cnpj         String   @unique
+  endereco     String?
+  area_atuacao String
+  estado       String?
+  cidade       String?
+  email        String   @unique
+  senha        String
+  createdAt    DateTime @default(now())
+}

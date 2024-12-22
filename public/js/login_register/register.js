@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 var data = {
                     nome: nome_empresa,
                     apelido: apelido_pj,
-                    cnpj: cnpj,
+                    cnpj: limparInput(cnpj),
                     endereco: endereco_pj,
                     area_atuacao: area_atuacao,
                     estado: estado_pj,
@@ -80,9 +80,40 @@ document.addEventListener('DOMContentLoaded', () => {
                     cidade: cidade_pj,
                     email: email_pj
                 }
-                console.log(data)
-                alert('Registro enviado com sucesso!');
-        }
+                
+                fetch("/api/pj/register", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(async (resp) => {
+                        if (resp.ok) {
+                            showModal('check.svg', 'Cadastro Realizado com Sucesso!', 'Continuar');
+                        } else {
+                            const errorData = await resp.json(); // Obter a mensagem de erro do servidor
+                            switch (errorData.inp_err_msg) {
+                                case "cnpj":
+                                    gerarError('cnpj', "Este CNPJ já existe");
+                                    break;
+                                case "Email":
+                                    gerarError('email_pj', "Este E-mail já existe");
+                                    break;
+                                case "Apelido":
+                                    gerarError('apelido-pj', "Este apelido já existe");
+                                    break;
+                                default:
+                                    alert("Erro desconhecido. Tente novamente.");
+                            }
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Erro na requisição:", error);
+                        alert("Erro ao tentar realizar o cadastro.");
+                    });
+                
+        };
     });
 
     // tratamento pf ( CPF )
@@ -143,21 +174,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 var data = {
                     nome: nome_completo,
                     apelido: apelido_pf,
-                    cpf: cpf,
+                    cpf: limparInput(cpf),
                     nascimento: data_nasc,
-                    tell: tell_pf,
-                    mail: email_pf,
+                    telefone: limparInput(tell_pf),
+                    email: email_pf,
                     estado: estado_pf,
-                    senha: senha_pf,
-                    cidade: cidade_pf
+                    cidade: cidade_pf,
+                    senha: senha_pf
                 }
-                console.log(data)
-                alert('Registro enviado com sucesso!');
+                
+                fetch("/api/pf/register", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                }).then(async (resp) => {
+                    if (resp.ok) {
+                        showModal('check.svg', 'Cadastro Realizado com Sucesso!', 'Continuar');
+                    } else {
+                        const errorData = await resp.json(); // Obtenha a mensagem de erro do servidor
+                        switch (errorData.inp_err_msg) {
+                            case "CPF":
+                                gerarError('cpf', "Este CPF já existe");
+                                break;
+                            case "Email":
+                                gerarError('email_pf', "Este E-mail já existe");
+                                break;
+                            case "Apelido":
+                                gerarError('apelido-pf', "Este apelido já existe");
+                                break;
+                            default:
+                                alert("Erro desconhecido");
+                        }
+                    }
+                }).catch(error => {
+                    console.error('Erro na requisição:', error);
+                    alert('Erro ao tentar realizar o cadastro.');
+                });
+                
         }
     });
-
-    // select
-
+ 
     // Adiciona o evento de clique nos inputs
     document.querySelectorAll('input').forEach(input => {
         input.addEventListener('click', removeErrorMessages);
@@ -168,6 +226,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-
-
-// Enviar os dados + separar as funções para reutilizar + deixar mais clean
