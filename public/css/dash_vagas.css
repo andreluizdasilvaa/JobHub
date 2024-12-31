@@ -1,0 +1,109 @@
+@import url(../css/utilities/global.css);
+@import url(../css/components/input_default.css);
+@import url(../css/components/header.css);
+@import url(../css/components/container_filter.css);
+@import url(../css/components/btn_voltar_topo.css);
+@import url(../css/components/container_info-job.css);
+
+:root {
+    --white2: black;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    width: 100%;
+    margin: 200px 0px;
+}
+
+/* Container Vagas */
+.container_vagas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+
+    background-color: #E8E8E8;
+    border: 2px solid var(--black);
+    border-radius: 12px;
+    padding: 36px;
+
+    max-width: 1000px;
+}
+
+/* Vagas - Card */
+.vaga {
+    display: flex;
+    border: 2px solid var(--black);
+    border-radius: 12px;
+    background-color: var(--white);
+    width: 100%;
+}
+
+.container_vaga {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 36px;
+    gap: 32px;
+}
+
+.black_bar {
+    background-color: var(--black);
+    width: 100px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 2px solid var(--black);
+}
+
+.vaga_text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 62%;
+}
+
+.vaga_text p span {
+    color: var(--secundary-blue);
+    font-size: var(--h7);
+}
+
+.vaga_text h2 {
+    font-size: var(--h4);
+    color: var(--secundary-blue);
+    font-family: var(--font-greenmkt);
+    font-weight: bold;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.vaga_text h2:hover {
+    text-decoration: underline;
+}
+
+.vaga_front {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.vaga_img h3 {
+    font-size: var(--h6);
+    text-align: end;
+    font-family: var(--font-greenmkt);
+    margin-top: 12px;
+}
+
+.vaga_img img {
+    width: 300px;
+    border-radius: 50%;
+}
+
+.vaga_local {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+}

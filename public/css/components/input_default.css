@@ -1,22 +1,27 @@
 @import url(../utilities/global.css);
 @import url(../components/animation_error.css);
 
+.input_filter,
 .input_default {
     display: flex;
     flex-direction: column;
     width: fit-content;
+    height: fit-content;
 }
 
+.input_filter label,
 .input_default label {
     text-align: start;
     color: var(--black);
     font-family: var(--font-mermaid);
 }
 
+.input_filter label span,
 .input_default label span {
     color: red;
 }
 
+.input_filter input,
 .input_default input, select {
     padding: 12px;
     width: 250px;
@@ -24,6 +29,11 @@
     border: 1px solid black;
     outline: none;
     transition: .3s;
+    background-color: white;
+}
+
+.meio_input-default {
+  width: 97px !important;
 }
 
 .input_default input:focus {
@@ -59,7 +69,7 @@
 
 .btn_padrao {
     border: none;
-    border-radius: 0 !important;
+    /* border-radius: 0 !important; */
     display: flex;
     align-items: center;
     height: 40px;

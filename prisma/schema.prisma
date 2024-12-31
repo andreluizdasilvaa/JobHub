@@ -39,4 +39,26 @@ model userPJ {
   email        String   @unique
   senha        String
   createdAt    DateTime @default(now())
+
+  vagas        vaga[] // o userPJ pode ter varias vagas
+}
+
+model vaga {
+  id                Int       @id @default(autoincrement())
+  nome              String
+  titulo            String
+  area_atuacao      String
+  jornada_trabalho  Int
+  faixa_salarial    Int?
+  tipo_vinculo      String
+  expiracao_vaga    DateTime
+  estado            String?
+  cidade            String?
+  nivel_experiencia String
+  observacoes       String?
+  descricao         String?
+  quant_candidatura Int?
+
+  id_usrPj          Int
+  userPJ            userPJ    @relation(fields: [id_usrPj], references: [id]) // relacionando o campo "id_usrPj" com o id do userPJ
 }

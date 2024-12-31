@@ -2,9 +2,31 @@
 .btn_padrao {
     background-color: var(--secundary-blue);
     padding: 16px;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     z-index: 9999;
     color: var(--white2);
     text-decoration: none;
     font-family: var(--font-greenmkt);
+    height: fit-content;
+    min-height: 20px;
+}
+
+.btn_padrao-2 {
+    position: relative;
+    background-color: var(--secundary-blue);
+    padding: 16px;
+    border-radius: 12px;
+    z-index: 9999;
+    color: var(--white2);
+    border: 2px solid var(--white2);
+    box-shadow: 5px 5px 0px var(--white2);
+    text-decoration: none;
+    font-family: var(--font-greenmkt);
+    font-weight: bold;
+    transition: .3s;
+    max-height: 50px;
+}
+
+.btn_padrao-2:hover {
+    box-shadow: none;
 }

@@ -1,0 +1,33 @@
+.container_filter {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    background-color: #E8E8E8;
+    padding: 36px;
+
+    border: 2px solid var(--black);
+    border-radius: 12px;
+}
+
+.container_filter::-webkit-scrollbar-track {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.container_filter h2 {
+    font-size: 34px;
+    margin: 16px 0px;
+    font-family: var(--font-greenmkt);
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1433px) {
+    .container_filter {
+        width: 90vw;
+        overflow-x: auto;
+        flex-direction: row !important;
+        padding: 6px 16px !important;
+        padding-top: 20px !important;
+    }
+}

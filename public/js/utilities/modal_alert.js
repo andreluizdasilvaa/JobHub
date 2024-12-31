@@ -14,10 +14,14 @@ function showModal(imgSrc, text, btnText, time = 5000, link = null) {
     // Exibir modal e overlay
     overlay_blackground.style.display = 'block';
     modal_alert.style.display = 'block';
+    document.body.style.overflowY = 'none'
+    document.body.style.overflowX = 'none'
 
     const closeModal = () => {
         modal_alert.style.display = 'none';
         overlay_blackground.style.display = 'none';
+        document.body.style.overflowY = 'auto'
+        document.body.style.overflowX = 'auto'
         if (link) {
             window.location.href = link; // Redirecionar se um link foi fornecido
         }

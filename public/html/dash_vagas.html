@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/imgs/Logo.svg" type="image/x-icon">
+    <!-- JS -->
+    <script src="../js/utilities/menu_hamburguer.js"></script>
+    <script src="../js/dash_vagas/dash_vagas.js"></script>
+    <script src="../js/dash_vagas/modal_info.js"></script>
+    <script src="../js/utilities/btn_voltar_topo.js"></script>
+    <script src="../js/Formatacao_inputs/inp_estado_city.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="../css/dash_vagas.css">
+    <!-- Style - mq -->
+    <link rel="stylesheet" href="../css/mq/mq-dash_vagas.css">
+    <title>Vagas</title>
+
+</head>
+<body>
+    <!-- Menu Hamburguer aberto -->
+    <div class="conteiner_burguer_on">
+        <svg id="close_icon_mn_burguer" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 1024 1024">
+            <path
+                fill="#1B98E0"
+                d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504L738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512L828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496L285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512L195.2 285.696a64 64 0 0 1 0-90.496"
+            />
+        </svg>
+        <div class="conteiner_burguer">
+            <h2>JobHub</h2>
+            <ul>
+                <li>
+                    <a href="">HUB</a>
+                </li>
+                <li>
+                    <a href="">VAGAS</a>
+                </li>
+                <li>
+                    <a href="">CRIE UMA VAGA</a>
+                </li>
+                <li>
+                    <a href="">ENTRAR</a>
+                </li>
+                <li>
+                    <a href="/register">CADASTRAR</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header -->
+        <header class="btn_header" id="#topo">
+            <div class="btn_header_content">
+                <div>
+                    <a href="/" class="link_logo01">
+                        <h2 class="logo01">JobHub</h2>
+                    </a>
+
+                    <ul>
+                        <li>
+                            <a href="">HUB</a>
+                        </li>
+                        <li>
+                            <a href="">VAGAS</a>
+                        </li>
+                        <li>
+                            <a href="">CRIE UMA VAGA</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="container_header-img">
+                    <img src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg" alt="">
+                </div>
+
+                <!-- Menu Hamburguer -->
+                <div id="menu_burguer_conteiner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                        <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            <path stroke="#344054" d="M6.25 25h37.5" />
+                            <path stroke="#1B98E0" d="M6.25 12.5h37.5m-37.5 25h37.5z" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </header>
+    
+    <main>
+
+        <!-- Filtro -->
+         <section>
+            <div class="container_filter">
+                <h2>Filtros</h2>
+
+                <!-- Procurar Vaga -->
+                <div class="input_filter">
+                    <label for="search-ft">Pesquisar:</label>
+                    <input type="search" id="search-ft" placeholder="Procurar Vaga" required maxlength="120">
+                </div>
+
+                <!-- Localização -->
+                <div class="input_filter">
+                    <label for="estado-pf">Estado (UF):</label>
+                    <select id="estado-pf" name="estado">
+                        <option value="" disabled selected>UF da Vaga</option>
+                        <!-- Os estados serão carregadas dinamicamente via JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Cidade -->
+                <div class="input_filter">
+                    <label for="cidade-pf">Cidade:</label>
+                    <select id="cidade-pf" name="cidade">
+                        <option value="" disabled selected>Selecione sua cidade</option>
+                        <!-- As cidades serão carregadas dinamicamente via JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Setor/Área de Atuação: -->
+                <div class="input_filter">
+                    <label for="area-atuacao-ft">Área de Atuação:</label>
+                    <select id="area-atuacao-ft" name="area-atuacao" required>
+                        <option value="" disabled selected>Selecione a área de atuação</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="saude">Saúde</option>
+                        <option value="educacao">Educação</option>
+                        <option value="financas">Finanças</option>
+                        <option value="energia">Energia</option>
+                        <option value="comercio">Comércio</option>
+                        <option value="servicos">Serviços</option>
+                        <option value="industria">Indústria</option>
+                        <option value="agricultura">Agricultura</option>
+                        <option value="construcao">Construção Civil</option>
+                        <option value="turismo">Turismo</option>
+                        <option value="logistica">Logística</option>
+                        <option value="meio-ambiente">Meio Ambiente</option>
+                        <option value="arte-cultura">Arte e Cultura</option>
+                        <option value="esportes">Esportes</option>
+                        <option value="alimentacao">Alimentação</option>
+                        <option value="transportes">Transportes</option>
+                        <option value="comunicacao">Comunicação</option>
+                        <option value="recursos-humanos">Recursos Humanos</option>
+                        <option value="outros">Outros</option>
+                    </select>
+
+                </div>
+
+                <!-- Data do anuncio -->
+                <div class="input_filter">
+                    <label for="data_anuncio-ft">Data do anuncio:</label>
+                    <select id="data_anuncio-ft" name="area-atuacao">
+                        <option value="qualquer_data" selected>Qualquer Data</option>
+                        <option value="ultimo_mes">Ultimo mês</option>
+                        <option value="ultima_semana">Ultima semana</option>
+                        <option value="ultima_24_hr">Últimas 24 horas</option>
+                    </select>
+                </div>
+
+                <!-- Modalidade de Trabalho -->
+                <div class="input_filter">
+                    <label for="modalidad_trab">Modalidade de Trabalho:</label>
+                    <input type="search" id="modalidad_trab" placeholder="Remoto 🔒" disabled required maxlength="120">
+                </div>
+
+                <!-- Tipo de Vínculo -->
+                <div class="input_filter">
+                    <label for="tipo_de_vinculo-ft">Tipo de Vínculo:</label>
+                    <select id="tipo_de_vinculo-ft" name="area-atuacao">
+                        <option value="qualquer_vinculo" selected>Qualquer Vínculo</option>
+                        <option value="clt">Vínculo Empregatício (CLT)</option>
+                        <option value="autonomo">Trabalho Autônomo</option>
+                        <option value="eventual">Trabalho Eventual</option>
+                        <option value="intermitente">Trabalho Intermitente</option>
+                        <option value="pj">Prestação de Serviço (PJ)</option>
+                        <option value="voluntario">Trabalho Voluntário</option>
+                        <option value="home_office">Trabalho em Home Office ou Teletrabalho</option>
+                        <option value="freelancer">Freelancer</option>
+                    </select>
+                </div>
+
+                <!-- Faixa Salarial -->
+                <div class="input_filter">
+                    <label for="faixa_salarial-min">Faixa Salarial:</label>
+                    <div>
+                        <input type="number" id="faixa_salarial-min" 
+                        class="meio_input-default"
+                        name="faixa_salarial_min" placeholder="Mínimo" min="0" required>
+                        <input type="number" id="faixa_salarial-max" 
+                        class="meio_input-default"
+                        name="faixa_salarial_max" placeholder="Máximo" min="0" required>
+                    </div>
+                </div>
+
+                <!-- Nível de experiência -->
+                <div class="input_filter">
+                    <label for="nivel_exp-select">Nível de experiência:</label>
+                    <select id="nivel_exp-select" name="nivel_exp">
+                        <option value="qualquer_nivel_exp" selected>Qualquer Nível de experiência</option>
+                        <option value="estagio">Estágio</option>
+                        <option value="assistente">Assistente</option>
+                        <option value="junior">Júnior</option>
+                        <option value="pleno">Pleno</option>
+                        <option value="senior">Sênior</option>
+                        <option value="diretor">Diretor</option>
+                        <option value="executivo">Executivo</option>
+                    </select>
+                </div>
+
+            </div>
+         </section>
+
+         <!-- Vagas -->
+          <section>
+            <div class="container_vagas">
+                
+                <!-- card vaga -->
+                <div class="vaga">
+                    <div class="black_bar"></div>
+                    <div class="container_vaga">
+                        <div class="vaga_text">
+
+                            <h2 class="show_modal-info">Desenvolvedor Front-end - Pleno</h2>
+
+                            <p>Faixa Salarial: R$<span>6000</span> - R$<span>8000</span></p>
+
+                            <p>Jornada de Trabalho: <span>40</span> Horas semanais, hórario flexivel</p>
+
+                            <p>Tipo de Vinculo: <span>CLT</span></p>
+
+                            <p>Setor/Área de Atúação: <span>Tecnologia</span></p>
+
+                            <p>Expiração da Vaga: <span>30/11/2024</span></p>
+
+                            <p>Descrição da Vaga: <br>
+                            <span>Estamos em busca de um Desenvolvedor Frontend para se juntar à nossa equipe dinâmica e em crescimento. O profissional será responsável por desenvolver e manter interfaces de usuário modernas, acessíveis e de alto desempenho. Trabalhará em conjunto com designers e desenvolvedores backend para criar uma experiência de usuário excepcional...</span></p>
+
+                        </div>
+                        <div class="vaga_front">
+
+                            <div class="vaga_img">
+                                <img src="https://static.vecteezy.com/ti/vetor-gratis/t1/47656219-abstrato-logotipo-projeto-para-qualquer-corporativo-marca-negocios-companhia-vetor.jpg" alt="">
+                                <h3>Company s.o</h3>
+                            </div>
+                            <div class="vaga_local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><defs><mask id="ipTLocal0"><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4"><path stroke-linecap="round" d="M9.858 32.757C6.238 33.843 4 35.343 4 37c0 3.314 8.954 6 20 6s20-2.686 20-6c0-1.657-2.239-3.157-5.858-4.243"/><path fill="#555555" d="M24 35s13-8.496 13-18.318C37 9.678 31.18 4 24 4S11 9.678 11 16.682C11 26.504 24 35 24 35Z"/><path fill="#555555" d="M24 22a5 5 0 1 0 0-10a5 5 0 0 0 0 10Z"/></g></mask></defs><path fill="#1B98E0" d="M0 0h48v48H0z" mask="url(#ipTLocal0)"/></svg>
+                                <p><span>São paulo, tautau</span></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card vaga 01 -->
+                <div class="vaga">
+                    <div class="black_bar"></div>
+                    <div class="container_vaga">
+                        <div class="vaga_text">
+                            
+                            <h2 class="show_modal-info">Desenvolvedor Front-end - Pleno</h2>
+
+                            <p>Faixa Salarial: R$<span>6000</span> - R$<span>8000</span></p>
+
+                            <p>Jornada de Trabalho: <span>40</span> Horas semanais, hórario flexivel</p>
+
+                            <p>Tipo de Vinculo: <span>CLT</span></p>
+
+                            <p>Setor/Área de Atúação: <span>Tecnologia</span></p>
+
+                            <p>Expiração da Vaga: <span>30/11/2024</span></p>
+
+                            <p>Descrição da Vaga: <br>
+                            <span>Estamos em busca de um Desenvolvedor Frontend para se juntar à nossa equipe dinâmica e em crescimento. O profissional será responsável por desenvolver e manter interfaces de usuário modernas, acessíveis e de alto desempenho. Trabalhará em conjunto com designers e desenvolvedores backend para criar uma experiência de usuário excepcional...</span></p>
+
+                        </div>
+                        <div class="vaga_front">
+
+                            <div class="vaga_img">
+                                <a href="">
+                                    <img src="https://marketplace.canva.com/EAE-O4SYB1I/3/0/1600w/canva-logotipo-circular-floral-monograma-elegante-rosa-gold-Uv8mbLqwWZ4.jpg" alt="">
+                                </a>
+                                
+                                <h3>Company s.o</h3>
+                            </div>
+                            <div class="vaga_local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><defs><mask id="ipTLocal0"><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4"><path stroke-linecap="round" d="M9.858 32.757C6.238 33.843 4 35.343 4 37c0 3.314 8.954 6 20 6s20-2.686 20-6c0-1.657-2.239-3.157-5.858-4.243"/><path fill="#555555" d="M24 35s13-8.496 13-18.318C37 9.678 31.18 4 24 4S11 9.678 11 16.682C11 26.504 24 35 24 35Z"/><path fill="#555555" d="M24 22a5 5 0 1 0 0-10a5 5 0 0 0 0 10Z"/></g></mask></defs><path fill="#1B98E0" d="M0 0h48v48H0z" mask="url(#ipTLocal0)"/></svg>
+                                <p><span>São paulo, tautau</span></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- card vaga -->
+                <div class="vaga">
+                    <div class="black_bar"></div>
+                    <div class="container_vaga">
+                        <div class="vaga_text">
+                            
+                            <h2 class="show_modal-info">Desenvolvedor Front-end - Pleno</h2>
+
+                            <p>Faixa Salarial: R$<span>6000</span> - R$<span>8000</span></p>
+
+                            <p>Jornada de Trabalho: <span>40</span> Horas semanais, hórario flexivel</p>
+
+                            <p>Tipo de Vinculo: <span>CLT</span></p>
+
+                            <p>Setor/Área de Atúação: <span>Tecnologia</span></p>
+
+                            <p>Expiração da Vaga: <span>30/11/2024</span></p>
+
+                            <p>Descrição da Vaga: <br>
+                            <span>Estamos em busca de um Desenvolvedor Frontend para se juntar à nossa equipe dinâmica e em crescimento. O profissional será responsável por desenvolver e manter interfaces de usuário modernas, acessíveis e de alto desempenho. Trabalhará em conjunto com designers e desenvolvedores backend para criar uma experiência de usuário excepcional...</span></p>
+
+                        </div>
+                        <div class="vaga_front">
+
+                            <div class="vaga_img">
+                                <img src="https://static.vecteezy.com/ti/vetor-gratis/t1/47656219-abstrato-logotipo-projeto-para-qualquer-corporativo-marca-negocios-companhia-vetor.jpg" alt="">
+                                <h3>Company s.o</h3>
+                            </div>
+                            <div class="vaga_local">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><defs><mask id="ipTLocal0"><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4"><path stroke-linecap="round" d="M9.858 32.757C6.238 33.843 4 35.343 4 37c0 3.314 8.954 6 20 6s20-2.686 20-6c0-1.657-2.239-3.157-5.858-4.243"/><path fill="#555555" d="M24 35s13-8.496 13-18.318C37 9.678 31.18 4 24 4S11 9.678 11 16.682C11 26.504 24 35 24 35Z"/><path fill="#555555" d="M24 22a5 5 0 1 0 0-10a5 5 0 0 0 0 10Z"/></g></mask></defs><path fill="#1B98E0" d="M0 0h48v48H0z" mask="url(#ipTLocal0)"/></svg>
+                                <p><span>São paulo, tautau</span></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          </section>
+
+          <!-- Mostrar informações da vaga -->
+          <section>
+            <div class="container_info-job">
+                <header>
+                    <div class="container_header_info-job">
+                        <img class="img_enterpriseLogo-info-header" src="https://marketplace.canva.com/EAE-O4SYB1I/3/0/1600w/canva-logotipo-circular-floral-monograma-elegante-rosa-gold-Uv8mbLqwWZ4.jpg" alt="">
+                        <div class="info_candidaturas-header">
+                            <img src="../assets/imgs/utils/users.svg" alt="Users">
+                            <p><span>1234</span> Candidataram nesta vaga</p>
+                        </div>
+                        <img id="close_modal_job-info" src="../assets/imgs/utils/close.svg" alt="Icon-Close">
+                    </div>
+                </header>
+                <div class="container_info">
+                    <div class="left-modal_info-job">
+                        <ul>
+                            <li>
+                                <p>Título da Vaga: <span>Desenvolvedor Front-End</span></p>
+                            </li>
+                            <li>
+                                <p>Setor/Área de Atuação: <span>Tecnologia</span></p>
+                            </li>
+                            <li>
+                                <p>Jornada de Trabalho: <span>40 horas semanais, horário flexível</span></p>
+                            </li>
+                            <li>
+                                <p>Faixa Salarial: R$ <span>6.000,00 - R$ 8.000,00</span></p>
+                            </li>
+                            <li>
+                                <p>Tipo de Vínculo: <span>CLT</span></p>
+                            </li>
+                            <li>
+                                <p>Expiração da Vaga: <span>30/11/2024</span></p>
+                            </li>
+                            <li>
+                                <p>Localização: <span>São Paulo, SP</span></p>
+                            </li>
+                            <li>
+                                <p>Nível de Experiência: <span>Junior</span></p>
+                            </li>
+                            <li>
+                                <p>Observações Adicionais: <br><span>Estamos comprometidos com a diversidade e inclusão. Incentivamos a candidatura de pessoas de todos os gêneros, etnias, orientações sexuais, idades e deficiências.</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-modal_info-job">
+                        <div class="container_desc-info-job">
+                            <p>Descrição da Vaga: <br><span class="content_desc-vaga_modal-info">
+                                seria muito texto aqui
+                            </span></p>
+                        </div>
+                        <footer>
+                            <button class="btn_padrao">Candidatar-se</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BTN - Voltar ao Topo -->
+    <div class="btn-voltar-topo" >
+        <a href="#topo" id="btn-voltar-topo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34px" height="34px" viewBox="0 0 48 48"><path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m13 30l12-12l12 12"/></svg>
+        </a>
+    </div>
+
+    <div class="overlay_blackground" id="overlay_blackground"></div>
+</body>
+</html>

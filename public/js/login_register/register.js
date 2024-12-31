@@ -215,14 +215,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 
         }
     });
- 
-    // Adiciona o evento de clique nos inputs
-    document.querySelectorAll('input').forEach(input => {
-        input.addEventListener('click', removeErrorMessages);
-    });
-
-    document.querySelectorAll('select').forEach(input => {
-        input.addEventListener('click', removeErrorMessages);
-    });
 
 });

@@ -66,6 +66,10 @@
     font-size: var(--h8);
 }
 
+.btn_padrao {
+    border-radius: 12px;
+}
+
 .btns_header {
     display: none;
 }
@@ -79,13 +83,13 @@
 /* Menu - Burguer Aberto */
 .conteiner_burguer_on {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     width: 100%;
-    height: 100vh;
-    background-color: var(--white2);
+    height: 100%;
+    background-color: var(--white);
     z-index: 2;
 }
 
@@ -105,6 +109,8 @@
 
 .conteiner_burguer_on h2 {
     color: black;
+    font-size: 34px;
+    font-family: var(--font-cubic);
 }
 
 .conteiner_burguer_on ul {
@@ -128,6 +134,22 @@
     color: var(--white);
 }
 
+/*  Botão 'cadastrar' - Branco */
+.register_btn {
+    color: var(--white) !important;
+}
+
+/* Img - perfil */
+.container_header-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    border: 1px solid var(--black);
+}
+
 /* Media queryes */
 @media screen and (max-width: 1400px ) {
     .btn_header_content {
@@ -138,7 +160,8 @@
 
 @media screen and (max-width: 800px ) {
     #btns_hdr,
-    .btn_header_content div ul {
+    .btn_header_content div ul,
+    .container_header-img img{
         display: none;
     }
 

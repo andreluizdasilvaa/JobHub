@@ -5,10 +5,22 @@ var express = require('express');
 var router = express.Router();
 const prisma = new PrismaClient();
 
+const { auth_user, generate_token_user, remove_session} = require('../middleware/auth')
+
 // Cadastro PF
 router.post('/pf/register', async (req, res, next) => {
     try {
-        var { nome, apelido, cpf, nascimento, telefone, email, estado, cidade, senha,  } = req.body;
+        var {
+             nome, 
+             apelido, 
+             cpf, 
+             nascimento, 
+             telefone, 
+             email, 
+             estado, 
+             cidade, 
+             senha,  
+            } = req.body;
 
         // verifica se o cpf || email || apelido já existe
         const existUser = await prisma.userPf.findFirst({
@@ -61,7 +73,16 @@ router.post('/pf/register', async (req, res, next) => {
 // Cadastro PJ
 router.post('/pj/register', async (req, res, next) => {
     try {
-        var { nome, apelido, cnpj, endereco, area_atuacao, estado, cidade, senha, email  } = req.body;
+        var { nome, 
+            apelido, 
+            cnpj, 
+            endereco, 
+            area_atuacao, 
+            estado, 
+            cidade, 
+            senha, 
+            email  
+            } = req.body;
 
         // verifica se o cnpj || email || apelido já existe
         const existUser = await prisma.userPJ.findFirst({
@@ -111,5 +132,36 @@ router.post('/pj/register', async (req, res, next) => {
     }
 });
 
+// Login PF e PJ
+router.post('/login', async (req, res, next) => {
+    try {
+        const { mail, senha } = req.body;
+
+        // Verifica se o email existe em userPf ou userPJ
+        const userPF = await prisma.userPf.findFirst({ where: { email: mail } });
+        const userPJ = await prisma.userPJ.findFirst({ where: { email: mail } });
+
+        if (!userPF && !userPJ) {
+            return res.status(404).json({ error: "E-mail não encontrado." });
+        }
+
+        // Obtém o usuário encontrado
+        const user = userPF || userPJ;
+
+        // Verifica a senha
+        const passwordMatch = await bcrypt.compare(senha, user.senha);
+        if (!passwordMatch) {
+            return res.status(401).json({ error: "Senha incorreta." });
+        }
+
+        // Gere o token e configure o cookie
+        generate_token_user(user, req, res, () => {
+            res.status(201).redirect('/vagas')
+        });
+
+    } catch (error) {
+        next(error)
+    }
+})
 
 module.exports = router;
