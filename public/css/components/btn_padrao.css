@@ -30,3 +30,38 @@
 .btn_padrao-2:hover {
     box-shadow: none;
 }
+
+.btn_padrao-3-r_logout,
+.btn_padrao-3-r,
+.btn_padrao-3 {
+    background-color: var(--white);
+    padding: 6px 12px;
+    border: 2px solid var(--secundary-blue);
+    text-decoration: none;
+    font-family: var(--font-greenmkt);
+    color: var(--black);
+    font-size: var(--h8);
+    cursor: pointer;
+}
+
+.btn_padrao-3-r_logout,
+.btn_padrao-3-r {
+    border-radius: 16px;
+}
+
+.btn_padrao-3-r:hover,
+.btn_padrao-3:hover {
+    background-color: var(--secundary-blue);
+    color: var(--white);
+}
+
+/* Logout - btn3 */
+.btn_padrao-3-r_logout {
+    color: var(--color-red);
+    border: 2px solid var(--color-red);
+}
+
+.btn_padrao-3-r_logout:hover {
+    background-color: var(--color-red);
+    color: var(--white);
+}

@@ -6,20 +6,25 @@
 .btn_header {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     top: 0;
+    max-width: 55vw;
     width: 100%;
     z-index: 1;
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Transições suaves */
+    transition: opacity 0.6s ease, transform 0.6s ease;
     opacity: 1;
-    transform: translateY(0); /* Sem deslocamento */
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Quando a rolagem ultrapassa o limite */
 .btn_header.scrolled {
-    opacity: 0; /* Gradualmente desaparece */
-    transform: translateY(-50px); /* Move-se suavemente para cima */
-    pointer-events: none; /* Impede interações */
+    opacity: 0;
+    transform: translateY(-50px);
+    pointer-events: none;
 }
 
 /* Conteúdo interno permanece intacto */
@@ -52,6 +57,7 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
+    cursor: pointer;
 }
 
 .btn_header_content div ul li a:hover {
@@ -139,21 +145,74 @@
     color: var(--white) !important;
 }
 
+.container_header-img {
+    gap: 2px !important;
+}
+
 /* Img - perfil */
-.container_header-img img {
-    width: 50px;
-    height: 50px;
+.img_profile-picture{
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    cursor: pointer;
     border: 1px solid var(--black);
+}
+
+.container_header-img > #icon_header-dow {
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+
+/* Modal - config perfil */
+.container_modal-config-header {
+    display: none;
+    width: 200px;
+    height: fit-content;
+    padding: 25px;
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    border-radius: 12px;
+    
+    margin-right: 15px;
+    margin-left: auto;
+}
+
+.container_modal-config-header ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    max-width: 100%;
+}
+
+.container_modal-config-header ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    backdrop-filter: brightness(97%);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.container_modal-config-header ul li img {
+    width: 30px;
+    height: 30px;
 }
 
 /* Media queryes */
 @media screen and (max-width: 1400px ) {
     .btn_header_content {
         max-width: 90vw;
+    }
+
+    .btn_header {
+        max-width: 95vw;
     }
 }
 
@@ -163,6 +222,10 @@
     .btn_header_content div ul,
     .container_header-img img{
         display: none;
+    }
+
+    .container_modal-config-header {
+        display: none !important;
     }
 
     #menu_burguer_conteiner {

@@ -7,9 +7,11 @@
     <!-- JS -->
     <script src="../js/utilities/menu_hamburguer.js"></script>
     <script src="../js/dash_vagas/dash_vagas.js"></script>
-    <script src="../js/dash_vagas/modal_info.js"></script>
+    <script src="../js/dash_vagas/modal_info-vagas.js"></script>
+    <script src="../js/dash_vagas/modal_info-header.js"></script>
     <script src="../js/utilities/btn_voltar_topo.js"></script>
     <script src="../js/Formatacao_inputs/inp_estado_city.js"></script>
+    <script src="../js/dash_vagas/header-modal_profile-info.js"></script>
     <!-- Style -->
     <link rel="stylesheet" href="../css/dash_vagas.css">
     <!-- Style - mq -->
@@ -68,8 +70,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="container_header-img">
-                    <img src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg" alt="">
+                <div class="container_header-img" id="modal_header-info">
+                    <img class="img_profile-picture" src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg" alt="">
+                    <img id="icon_header-dow" src="../assets/imgs/utils/down.svg" alt="Icon-Down">
                 </div>
 
                 <!-- Menu Hamburguer -->
@@ -81,6 +84,26 @@
                         </g>
                     </svg>
                 </div>
+            </div>
+            <div class="container_modal-config-header">
+                <ul>
+                    <li>
+                        <img class="img_profile-picture" src="https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg" alt="">
+                        <button class="btn_padrao-3">Ver Perfil</button>
+                    </li>
+                    <li>
+                        <img src="../assets/imgs/user_profile/config.svg" alt="Icon-Config">
+                        <a href="" class="btn_padrao-3-r">Configuração</a>
+                    </li>
+                    <li>
+                        <img src="../assets/imgs/utils/dark_mode.svg" alt="Dark Mode - Icon">
+                        <button class="btn_padrao-3-r">Dark Mode</button>
+                    </li>
+                    <li>
+                        <img src="../assets/imgs/user_profile/logout_red.svg" alt="Icon-Logout">
+                        <button class="btn_padrao-3-r_logout" id="btn_logout">Sair</button>
+                    </li>
+                </ul>
             </div>
         </header>
     

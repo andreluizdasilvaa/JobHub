@@ -164,4 +164,13 @@ router.post('/login', async (req, res, next) => {
     }
 })
 
+// Ecerrar sessão do usuario = delete -> cookie
+router.delete('/logout', auth_user, (req, res, next)=> {
+    try {
+        remove_session(req, res);
+    } catch (error) {
+        next(error)
+    }
+});
+
 module.exports = router;
