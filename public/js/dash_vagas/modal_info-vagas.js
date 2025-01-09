@@ -69,5 +69,3 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo(scrollXBeforeModal, scrollYBeforeModal);
     }
 });
-
-// Revisar

@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento para alternar o formulário ao selecionar um dos rádios
     radioPf.addEventListener('change', alternarFormularios);
     radioPj.addEventListener('change', alternarFormularios);
-
-    alternarFormularios();
     
     // Login e tratamento
     var submit_register_pj = document.getElementById('submit_register-pj');
@@ -191,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(data)
                 }).then(async (resp) => {
                     if (resp.ok) {
-                        showModal('check.svg', 'Cadastro Realizado com Sucesso!', 'Continuar');
+                        showModal('check.svg', 'Cadastro Realizado com Sucesso!', 'Continuar', 3000, '/login');
                     } else {
                         const errorData = await resp.json(); // Obtenha a mensagem de erro do servidor
                         switch (errorData.inp_err_msg) {
